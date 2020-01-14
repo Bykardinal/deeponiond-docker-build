@@ -1,31 +1,29 @@
-# What is DeepOnion ?
-What is DeepOnion (Onion)? DeepOnion is an anonymous cryptocurrency operating through a secret Internet network Tor and on the X13 algorithm. The bulb with the keyhole on the emblem of DeepOnion hints at the onion routing system used - the technology of anonymous data transfer in a computer network.
+# What is DeepOnion (ONION)?
+DeepOnion is a decentralized, multi-layered, privacy cryptocurrency that communicates with other nodes through the anonymous Tor network. DeepOnion uses x13 algorithms to secure the network. The brand logo is an onion with a key hole representing security and the use of the onion routing network. To ensure complete anonymity, all transactions are sent through the Tor network to protect and hide the physical location and the IP address of the wallet users from tracking.
 
-To ensure complete anonymity, all transactions are carried out through the Tor network, which completely hides the user's IP address. This not only provides a high level of confidentiality but also negates the ability to track payments. In addition, the project uses a number of other technologies:
+DeepOnion launched a number of other blockchain technologies and platforms, such as:
 
-DeepVault – allows you to store information safely in the DeepOnion blockchain, while the ability to change it is completely absent.
+DeepVault – allows you to register digital files safely on the DeepOnion blockchain, to be verified for authenticity with the file owner.
 
-DeepSend – provides anonymous and non-tracked transactions through the use of multi-signatures. ONION cryptocurrency has the following technical parameters:
+DeepSend – provides anonymous and untraceable payments through the use of multi-signatures.
 
-the mechanism for achieving consensus is a hybrid, combining both Proof-of-Work and Proof-of-Stake; hash algorithm – X13;
+VoteCentral - A blockchain dependent voting platform for the DeepOnion community to decide the future development and to help promote the project.
 
+ONION cryptocurrency has the following technical parameters:
+The mechanism for achieving consensus is a hybrid, combining both Proof-of-Work and Proof-of-Stake; hash algorithm – X13;
 the number of blocks to confirm the transaction – 5;
-
 final issue volume – 25 million coins;
-
 block generation time - with PoS – 60 seconds, with PoW – 240.
 
-# For what need this repository
-This repository need for autobuilding DeepOnion docker images on dockerhub platform. Our dockerhub account connected with this repository and tracking updates. After we will release new version of wallet, our dockerhub will get new version of image.
-Also this repository may be useful for experienced people who need custom image and will edit dockerfile after cloning repo and before building docker image.
+# Why do I need this repository?
+This repository is used to automatically build the DeepOnion docker images on the dockerhub platform. Our dockerhub account is connected with this repository and will update automatically. After we release a new version of the DeepOnion wallet, our dockerhub will automatically get the latest version of the image. Also this repository may be useful for experienced people who need a custom image, or will edit dockerfile after cloning repo and before building docker image.
 
-# For what need docker image built from this code
-With Docker image, you can run DeepOnion wallet in isolated container. It maybe useful for cryptocurrency exchanges, for cryptocurrency wallets, for mining pools. And you no need to know how to build wallet from source code, just few commands and you have secure, trusted and ready to use wallet.
+# Why do I need a docker image built from this code?
+With the Docker image, you can run the DeepOnion wallet in an isolated container. It maybe useful for cryptocurrency exchanges, for cryptocurrency wallets, and for mining pools. You don't need to know how to build wallet from the source code, just run a few commands and you will have a secure, trusted and ready to use wallet.
 
 # How use docker images
-You have two ways. You can download images from dockerhub, or you can clone this github and build docker images on your machine.
+You have two ways. You can download the images from dockerhub, or you can clone this github and build docker images on your machine. For building image from github code you should have installed git and docker in your system.
 
-For building image from github code you should have installed git and docker in your system.
 
 ### Commands for building image
     $ git clone https://github.com/deeponion/deeponiond-docker-build/
@@ -42,20 +40,30 @@ After docker will finish building new image you can check docker images and will
 After running this command, docker will automatically load ready to use image and will launch it. DeepOnion wallet will start syncing process.
 
 # How work with DeepOnion docker container after lauch
-for working with docker container you should know container id. Run bellow command to see all your containers
+To work with a docker container you should know container id. Run the following command to see all your containers:
 
     sudo docker ps -a
-after this you can send any command to specific container and work with DeepOnion wallet. As example:
+After this you can send any command to specific container and work with DeepOnion wallet. As example:
 
     sudo docker exec <containerID> DeepOnion-cli getnetworkinfo
 or
 
     sudo docker exec <containerID> DeepOnion-cli help
-you will get all possible commands list. They same with Bitcoin-cli, so if you have experience with Bitcoin-cle, you have experience with DeepOnion-cli.
+Will list all the available commands. They are similar to Bitcoin-cli, so if you have experience with Bitcoin-cli, you have experience with DeepOnion-cli.
 
-### how launch DeepOnion docker container with using custom working dir.
-
+###     How to launch DeepOnion docker container using custom working dir?
+     
     sudo docker run -d -v $HOME/.DeepOnion:/root/.DeepOnion deeponionteam/deeponiond-docker-build:tag
 
+
+# License
+
+The MIT License (MIT)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
