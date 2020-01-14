@@ -5,7 +5,7 @@ RUN apt-get update \
   && add-apt-repository ppa:bitcoin/bitcoin \
   && apt-get update \
   && apt-get install -qq -y libdb4.8-dev libdb4.8++-dev \
-  && git clone --recursive https://github.com/deeponion/deeponion.git \
+  && git clone --recursive --branch v2.1.1 https://github.com/deeponion/deeponion.git \
   && cd deeponion \
   && ./autogen.sh \
   && ./configure --without-gui \
